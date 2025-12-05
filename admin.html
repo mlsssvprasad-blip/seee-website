@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SEEE Admin Panel</title>
+  <link rel="stylesheet" href="seee.css" />
+  <script defer src="script.js"></script>
+</head>
+<body class="admin-page">
+
+<header class="sub-header admin-header">
+  <nav class="navbar">
+    <a href="seee.html" class="brand">
+      <img src="logo.jpeg" alt="SEEE Logo" class="logo" />
+    </a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+    <label for="nav-toggle" class="hamburger">&#9776;</label>
+
+    <div class="nav-links">
+      <label for="nav-toggle" class="close">&times;</label>
+      <ul>
+        <li><a href="seee.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="events.html">EVENTS</a></li>
+        <li><a href="updates.html">UPDATES</a></li>
+        <li><a href="college.html">COLLEGE</a></li>
+        <li><a href="board.html">BOARD</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="sub-header-content">
+    <h1>SEEE Admin Panel</h1>
+    <p>Manage Events, Updates & Board Members</p>
+  </div>
+</header>
+
+<section class="admin-section">
+  <div class="admin-wrapper">
+
+    <div class="admin-grid">
+      <!-- EVENTS -->
+      <div class="admin-card">
+        <h2>Events</h2>
+        <input type="hidden" id="eventEditId" />
+
+        <label>Title</label>
+        <input type="text" id="eventTitle" />
+
+        <label>Date</label>
+        <input type="date" id="eventDate" />
+
+        <label>Type</label>
+        <select id="eventType">
+          <option>Technical</option>
+          <option>Cultural</option>
+          <option>Sports</option>
+          <option>Other</option>
+        </select>
+
+        <label>Description</label>
+        <textarea id="eventDesc" rows="4"></textarea>
+
+        <label>Images (multiple)</label>
+        <input type="file" id="eventImages" multiple accept="image/*" />
+
+        <button id="eventSaveBtn">Save Event</button>
+        <button id="eventResetBtn" type="button">Reset</button>
+        <p id="eventMsg" class="admin-msg"></p>
+
+        <h3>Existing Events</h3>
+        <div id="adminEventsList"></div>
+      </div>
+
+      <!-- UPDATES -->
+      <div class="admin-card">
+        <h2>Updates</h2>
+        <input type="hidden" id="updEditId" />
+
+        <label>Title</label>
+        <input type="text" id="updTitle" />
+
+        <label>Date</label>
+        <input type="date" id="updDate" />
+
+        <label>Description / Notice</label>
+        <textarea id="updDesc" rows="6"
+          placeholder="Paste notice here; links like https://... will become buttons."></textarea>
+
+        <label>Image (optional)</label>
+        <input type="file" id="updImage" accept="image/*" />
+
+        <button id="updSaveBtn">Save Update</button>
+        <button id="updResetBtn" type="button">Reset</button>
+        <p id="updMsg" class="admin-msg"></p>
+
+        <h3>Existing Updates</h3>
+        <div id="adminUpdatesList"></div>
+      </div>
+
+      <!-- BOARD -->
+      <div class="admin-card">
+        <h2>Board Members</h2>
+        <input type="hidden" id="boardEditId" />
+
+        <label>Name</label>
+        <input type="text" id="boardName" />
+
+        <label>Role</label>
+        <select id="boardRole">
+          <option>President</option>
+          <option>Vice President</option>
+          <option>Lead Coordinator</option>
+          <option>Secretary</option>
+          <option>Joint Secretary</option>
+          <option>Treasurer</option>
+          <option>People Relation Manager</option>
+          <option>Event Coordinator</option>
+          <option>Technical Coordinator</option>
+          <option>Cultural Coordinator</option>
+          <option>Sports Coordinator</option>
+          <option>Design Coordinator</option>
+          <option>Photographer</option>
+          <option>Other</option>
+        </select>
+
+        <label>Year / Class (optional)</label>
+        <input type="text" id="boardYear" placeholder="III B.Tech EEE" />
+
+        <label>Photo</label>
+        <input type="file" id="boardImage" accept="image/*" />
+
+        <button id="boardSaveBtn">Save Member</button>
+        <button id="boardResetBtn" type="button">Reset</button>
+        <p id="boardMsg" class="admin-msg"></p>
+
+        <h3>Existing Board Members</h3>
+        <div id="adminBoardList"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
+
+
+
